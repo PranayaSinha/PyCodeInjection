@@ -12,6 +12,7 @@ from HTMLParser import HTMLParser
 #Taken from http://stackoverflow.com/questions/2115410/does-python-have-a-module-for-parsing-http-requests-and-responses
 from BaseHTTPServer import BaseHTTPRequestHandler
 from StringIO import StringIO
+import json
 
 class HTTPRequest(BaseHTTPRequestHandler):
     def __init__(self, request_text):
@@ -230,3 +231,29 @@ if __name__ == '__main__':
                 new_cmd = raw_input("Command:")
                 parsed_url,headers,data = parse_request(new_cmd,options.request,options.parameter)
                 send_request(parsed_url,new_cmd,headers,data)
+
+    output_data = {
+        "id": "50001",  
+            "name": "Ransomware Attack",
+            "risk": "Critical",
+            "confidence": "High",
+            "description": "The system appears to be compromised with ransomware, which encrypts files and demands a ransom to decrypt them...",
+            "solution": "Isolate the affected systems to prevent the spread of ransomware, and restore files from a known good backup. Engage cybersecurity professionals for incident response.",
+            "reference": "https://www.us-cert.gov/Ransomware",  
+            "evidence": "Files have been encrypted with an unknown key, and a ransom note has been left on the system.",
+            "cweid": "1000",  
+            "wascid": "20",  
+            "sourceid": "5",  
+            "other": "",
+            "attack": "The ransomware may have entered through a phishing attack, exploit of a system vulnerability, or malicious download.",
+            "messageId": "", 
+            "pluginId": "",  
+            "alertRef": "" 
+        }
+
+    # Step 3: Write the dictionary to a file in JSON format
+    with open('output.json', 'w') as json_file:
+        json.dump(output_data, json_file, indent=4)  # The `indent` parameter is optional, but it helps make the output more readable
+
+    print("JSON file has been written with the following content:")
+    print(json.dumps(output_data, indent=4))  # This line is also optional. It's just to show the output.
