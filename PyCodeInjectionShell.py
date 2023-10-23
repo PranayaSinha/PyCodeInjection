@@ -251,4 +251,5 @@ if __name__ == '__main__':
     print("JSON file has been written with the following content:")
     print(json.dumps(output_data, indent=4))  # This line is also optional. It's just to show the output.
 
-    Alert.raise_alert()
+    print(Alert.raise_alert())
+    
