@@ -3,7 +3,7 @@ import yaml
 
 # Definition of the Alert and Message as dictionaries, akin to defining a structure in Go
 
-def raise_alert(params):
+def raise_alert():
     return {
         "messageId": "2001",  # Assuming a new ID for the ransomware case
         "risk": "Critical",
@@ -16,7 +16,7 @@ def raise_alert(params):
         "configId": "",  # Keep as is if it still doesn't apply
         "method": "GET",  # Assuming the method is the same; adjust if needed
         "confidence": "High",
-        "url": params["Target"],  # Target presumably remains the same
+        "url": ["Target"],  # Target presumably remains the same
         "reference": "<li><a href='https://www.us-cert.gov/Ransomware'>Ransomware Guide</a></li>",
         "param": "file_encryption",  # Example parameter affected by ransomware
         "solution": "<li>Ensure up-to-date backups are maintained and stored securely offline.</li><li>Implement robust security solutions to protect endpoints.</li><li>Conduct regular security training focusing on phishing and other social engineering tactics.</li>",
