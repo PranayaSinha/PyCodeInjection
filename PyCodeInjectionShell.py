@@ -12,7 +12,6 @@ from HTMLParser import HTMLParser
 #Taken from http://stackoverflow.com/questions/2115410/does-python-have-a-module-for-parsing-http-requests-and-responses
 from BaseHTTPServer import BaseHTTPRequestHandler
 from StringIO import StringIO
-import json
 
 class HTTPRequest(BaseHTTPRequestHandler):
     def __init__(self, request_text):
