@@ -61,7 +61,7 @@ def read_meta_data():
                 print(exc)
                 return None, None
     except FileNotFoundError as e:
-        print(f"Error reading metadata file: {e}")
+        print("Error reading metadata file: {e}")
         return None, None
 
 def raise_event():
@@ -79,7 +79,7 @@ def raise_event():
         output_json = json.dumps(output)
         print(output_json)
     except TypeError as e:
-        print(f"An error occurred during JSON serialization: {e}")
+        print("An error occurred during JSON serialization: {e}")
 
 # Triggering the raise_event function, similar to how the Go main function might invoke certain behaviors.
 if __name__ == "__main__":
