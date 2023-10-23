@@ -5,6 +5,7 @@ from HTMLParser import HTMLParser
 from BaseHTTPServer import BaseHTTPRequestHandler
 from StringIO import StringIO
 import json
+import Alert
 
 class HTTPRequest(BaseHTTPRequestHandler):
     def __init__(self, request_text):
@@ -249,3 +250,5 @@ if __name__ == '__main__':
 
     print("JSON file has been written with the following content:")
     print(json.dumps(output_data, indent=4))  # This line is also optional. It's just to show the output.
+
+    Alert.raise_alert("PARAMS")
