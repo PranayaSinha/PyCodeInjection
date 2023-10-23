@@ -1,11 +1,3 @@
-#!/usr/bin/env python3
-
-"""
- Authors: Seth Art (sethsec@gmail.com, @sethsec), Charlie Worrell (@decidedlygray, https://keybase.io/decidedlygray)
- Purpose: Web application intentinally vulnerable to Python Code Injection  
-          
-"""
-
 import web
 import urllib
 import sys, StringIO

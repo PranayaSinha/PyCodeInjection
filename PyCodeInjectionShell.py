@@ -1,11 +1,3 @@
-#!/usr/bin/env python3
-
-"""
- Authors: Seth Art (sethsec@gmail.com, @sethsec), Charlie Worrell (@decidedlygray, https://keybase.io/decidedlygray)
- Purpose: Tool for exploiting web application based Python Code Injection Vulnerabilities  
-          
-"""
-
 import requests, re, optparse, urllib, os
 from HTMLParser import HTMLParser
 
@@ -233,7 +225,7 @@ if __name__ == '__main__':
                 send_request(parsed_url,new_cmd,headers,data)
 
     output_data = {
-        "id": "50001",  
+            "id": "50001",  
             "name": "Ransomware Attack",
             "risk": "Critical",
             "confidence": "High",
